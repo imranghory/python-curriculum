@@ -29,3 +29,23 @@ As a friend put it:
     11. == vs is.
     12. Dictionaries are unordered.
     13. Scope, particularly scope in loops.
+
+##Common errors confusing to beginners
+
+###  "invalid syntax" on valid syntax
+
+Often you'll see an error like this:
+
+```python
+  File "test.py", line 5
+    print "hello"    
+        ^
+SyntaxError: invalid syntax
+```
+
+Which is confusing because the statement looks perfectly okay. The error is often with the previous line which was syntactically complete (typically either mismatched brackets or an if statement missing a ":") such as the following:
+
+```python
+count = (1
+print "hello"
+```
