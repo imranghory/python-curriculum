@@ -46,6 +46,13 @@ SyntaxError: invalid syntax
 Which is confusing because the statement looks perfectly okay. The error is often with the previous line which was syntactically complete (typically either mismatched brackets or an if statement missing a ":") such as the following:
 
 ```python
-count = (1
+count = (1   #missing closing bracket
 print "hello"
 ```
+
+```python
+if count == 1 # missing ":" 
+    print "hello"
+```
+
+
