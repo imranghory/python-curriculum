@@ -9,6 +9,16 @@ Volunteer resources
 
 [Codecademy python track](http://www.codecademy.com/tracks/python)
 
+
+
+## Python Cheat Sheets
+
+Good for quickly getting up to speed with common Python code structure and data types:
+
+[Python Cheat Sheet](http://www.cogsci.rpi.edu/~destem/gamedev/python.pdf)
+
+[Annotated Simple Python Program](http://www.pythonforbeginners.com/wp-content/uploads/2012/10/python_cheatsheet1.png)
+
 ##Python gotchas
 
 As a friend put it:
@@ -55,4 +65,35 @@ if count == 1 # missing ":"
     print "hello"
 ```
 
+### TypeError: 'str' object does not support item assignment
 
+```python
+>>> a = 'hello vorld'
+>>> a[6]='w'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+```
+
+Python strings are immutable, so once created they can't be changed. If you want to change their content you need to create a new string.
+
+```python
+>>> a[:6] + 'w' + a[7:]
+'hello world'
+```
+
+### TypeError: cannot concatenate 'str' and 'int' objects
+
+```python
+>>> count = 20
+>>> "count " + count
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: cannot concatenate 'str' and 'int' objects
+```
+
+If you want to concatenate non-string items to a string you need to convert them to strings first. The way to get the standard string representation of an object is to use the str() function:
+
+```python
+>>> "count " + str(count)
+```
